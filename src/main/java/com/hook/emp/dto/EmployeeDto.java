@@ -28,4 +28,6 @@ public class EmployeeDto {
   @Email(message = "Email should have proper structure. Example: username@gmail.com ")
   private String email;
 
+  private String departmentCode;
+
 }
