@@ -1,5 +1,6 @@
 package com.hook.emp.controller;
 
+import com.hook.emp.dto.APIResponseDto;
 import com.hook.emp.dto.EmployeeDto;
 import com.hook.emp.service.EmployeeService;
 import jakarta.validation.Valid;
@@ -28,9 +29,9 @@ public class EmployeeController {
   }
 
   @GetMapping("{id}")
-  public ResponseEntity<EmployeeDto> getEmployee(@PathVariable("id") Long employeeId) {
-    EmployeeDto employeeDto = employeeService.getEmployeeById(employeeId);
-    return new ResponseEntity<>(employeeDto, HttpStatus.OK);
+  public ResponseEntity<APIResponseDto> getEmployee(@PathVariable("id") Long employeeId) {
+    APIResponseDto apiResponse = employeeService.getEmployeeById(employeeId);
+    return new ResponseEntity<>(apiResponse, HttpStatus.OK);
   }
 
 }
