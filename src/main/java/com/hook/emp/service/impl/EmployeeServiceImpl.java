@@ -2,6 +2,7 @@ package com.hook.emp.service.impl;
 
 import com.hook.emp.dto.EmployeeDto;
 import com.hook.emp.entity.Employee;
+import com.hook.emp.exception.ResourceNotFoundException;
 import com.hook.emp.mappers.EmployeeMapper;
 import com.hook.emp.repository.EmployeeRepository;
 import com.hook.emp.service.EmployeeService;
@@ -25,7 +26,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
   @Override
   public EmployeeDto getEmployeeById(Long employeeId) {
-    Employee employee = employeeRepository.findById(employeeId).get();
+    Employee employee = employeeRepository.findById(employeeId).orElseThrow(
+        () -> new ResourceNotFoundException("Employee", "id", employeeId)
+    );
 
     return employeeMapper.toDto(employee);
   }
