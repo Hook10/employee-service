@@ -30,4 +30,7 @@ public class EmployeeDto {
 
   private String departmentCode;
 
+  private String organizationCode;
+
+
 }
