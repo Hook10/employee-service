@@ -67,9 +67,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     OrganizationDto organizationDto = organizationResponse.getBody();
 
     APIResponseDto apiResponseDto = new APIResponseDto();
-    apiResponseDto.setDepartmentDto(departmentDto);
-    apiResponseDto.setEmployeeDto(employeeDto);
-    apiResponseDto.setOrganizationDto(organizationDto);
+    apiResponseDto.setDepartment(departmentDto);
+    apiResponseDto.setEmployee(employeeDto);
+    apiResponseDto.setOrganization(organizationDto);
     return apiResponseDto;
   }
 
@@ -85,8 +85,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     departmentDto.setDepartmentDescription("Research and Development Department");
 
     APIResponseDto apiResponseDto = new APIResponseDto();
-    apiResponseDto.setDepartmentDto(departmentDto);
-    apiResponseDto.setEmployeeDto(employeeDto);
+    apiResponseDto.setDepartment(departmentDto);
+    apiResponseDto.setEmployee(employeeDto);
     return apiResponseDto;
   }
 }
